@@ -212,6 +212,6 @@
 
 
 ; ************* Question*********
-; Is this a list of three things? or a theoretical list of n things that ends
-; up being three things? Is there a difference? See Figures 2.5 and 2.6
+; Is this a list of four things? or a theoretical list of n things that ends
+; up being four things? Is there a difference? See Figures 2.5 and 2.6
 (cons (list 1 2) (list 3 4))
