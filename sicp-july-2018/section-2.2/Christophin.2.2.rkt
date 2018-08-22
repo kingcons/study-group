@@ -155,7 +155,7 @@
       (cons (* (car items) (car items)) (square-list (cdr items)))))
 
 (define (square-list items)
-  (map ⟨??⟩ ⟨??⟩))
+  (map (lambda (x) (* x x)) items))
 
 
 ; ************* Question*********
