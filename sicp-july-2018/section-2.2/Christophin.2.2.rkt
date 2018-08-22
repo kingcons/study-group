@@ -1,3 +1,4 @@
+; Substitution model to maek sure I follow.
 (define (list-ref items n)
   (if (= n 0)
       (car items)
@@ -17,6 +18,7 @@
 16
 
 ; *****************************
+; Again, not an excerise, making sure I follow the process.
 
 (define (length items)
   (if (null? items)
