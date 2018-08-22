@@ -53,7 +53,8 @@
 (25 16 9 4 1)
 
 
-*********** SKIPPING THIS FOR NOW *******************
+; *********** SKIPPING THIS FOR NOW *******************
+#|
 ; Exercise 2.19: Consider the change-counting program of 1.2.2. It would be
 ; nice to be able to easily change the currency used by the program, so that
 ; we could compute the number of ways to change a British pound, for example.
@@ -102,6 +103,7 @@
 ; and no-more? in terms of primitive operations on list structures.
 ; Does the order of the list coin-values affect the answer produced by
 ; cc? Why or why not?
+|#
 
 ; Exercise 2.20: The procedures +, *, and list take arbitrary numbers of
 ; arguments. One way to define such procedures is to use define with
