@@ -159,15 +159,22 @@
 
 ; Exercise 2.22: Louis Reasoner tries to rewrite the first square-list
 ; procedure of Exercise 2.21 so that it evolves an iterative process:
+(square-list (list 1 2 3 4))
+(1 4 9 16)
 
-  (define (square-list items)
-    (define (iter things answer)
-      (if (null? things)
-          answer
-          (iter (cdr things)
-                (cons (square (car things))
-                      answer))))
-    (iter items nil))
+(define (square-list items)
+  (define (iter things answer)
+    (if (null? things)
+        answer
+        (iter (cdr things)
+              (cons (square (car things))
+                    answer))))
+  (iter items nil))
+
+(square-list (list 1 2 3 4))
+(iter (list 1 2 3 4) null)
+(iter '(2 3 4) (cons 1 null)
+(iter '(3 4) (cons 4 null))
 
 ;  Unfortunately, defining square-list this way produces the answer list
 ;  in the reverse order of the one desired. Why?
