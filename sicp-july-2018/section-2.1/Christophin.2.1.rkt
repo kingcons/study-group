@@ -25,3 +25,8 @@
     (let ((g ((if (< d 0) - +) (abs (gcd2 n d)))))
         (cons (/ n g)
               (/ d g))))
+
+ (define (bi-dir-fib n)
+    (cond ((or (= n 0) (= n 1)) n)
+          ((> n 1) (+ (bi-dir-fib (- n 2)) (bi-dir-fib (- n 1))))
+          (else (* (expt (- 1) (+ (abs n) 1)) (bi-dir-fib (abs n))))))
