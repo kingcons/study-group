@@ -284,6 +284,12 @@
 
 ;; Exercise 2.38
 
+(defun fold-right (combiner initial sequence)
+  (if (null sequence)
+      initial
+      (funcall combiner (car sequence)
+               (fold-right combiner initial (cdr sequence)))))
+
 (defun fold-left (op initial sequence)
   (labels ((iter (result rest)
              (if (null rest)
@@ -298,3 +304,62 @@
   (print (fold-right #'list nil '(1 2 3)))  ;; => (1 (2 (3 NIL)))
   (print (fold-left  #'list nil '(1 2 3)))) ;; => (((NIL 1) 2) 3)
 
+;; Exercise 2.39
+
+(defun reverse-left (items)
+  (fold-left (lambda (x y) (cons y x)) nil items))
+
+;; I sort of know the path I took with reverse-right ...
+;; but I don't feel I know the principles behind it. :-/
+(defun reverse-right (items)
+  (fold-right (lambda (x y) (append y (list x))) nil items))
+
+;; Exercise 2.40
+
+(defun smallest-divisor (n)
+  (labels ((find-divisor (n test)
+             (cond ((> (expt test 2) n) n)
+                   ((zerop (rem n test)) test)
+                   (t (find-divisor n (1+ test))))))
+    (find-divisor n 2)))
+
+(defun prime-p (n)
+  (= n (smallest-divisor n)))
+
+(defun prime-sum-p (pair)
+  (prime-p (+ (first pair) (second pair))))
+
+(defun make-pair-sum (pair)
+  (append pair (list (+ (first pair) (second pair)))))
+
+(defun enumerate (low high)
+  (loop for i from low to high collecting i))
+
+(defun flatmap (fn items)
+  (accumulate #'append nil (my-map fn items)))
+
+(defun unique-pairs (n)
+  (flet ((construct-pairs-below (i)
+           (my-map (lambda (j) (list i j))
+                   (enumerate 1 (1- i)))))
+    (flatmap #'construct-pairs-below (enumerate 1 n))))
+
+(defun prime-sum-pairs (n)
+  (my-map #'make-pair-sum
+          (select #'prime-sum-p (unique-pairs n))))
+
+;; Exercise 2.41
+
+(defun unique-triples (n)
+  (flet ((construct-triples-below (i)
+           (flatmap (lambda (j)
+                      (my-map (lambda (k)
+                                (list i j k))
+                              (enumerate 1 (1- j))))
+                    (enumerate 1 (1- i)))))
+    (remove nil (flatmap #'construct-triples-below (enumerate 1 n)))))
+
+(defun triples-sum-to-n (n)
+  (select (lambda (nums)
+            (= n (reduce #'+ nums)))
+          (unique-triples n)))
