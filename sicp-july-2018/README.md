@@ -41,31 +41,31 @@ You are encouraged to attempt the exercises prior to a group meeting! :)
 * 08/15 - Section 2.1 (Introduction to Data Abstraction)
 * 08/22 - Section 2.2 (Hierarchical Data and the Closure Property)
 * 08/29 - Section 2.3 (Symbolic Data)
-* 09/05 - Section 2.4 (Multiple Representations for Abstract Data)
-* 09/12 - Section 2.5 (Systems with Generic Operations)
+* 09/12 - Section 2.4 (Multiple Representations for Abstract Data)
+* 09/19 - Section 2.5 (Systems with Generic Operations)
 
 > Chapter 3
 
-* 09/19 - Section 3.1 (Assignment and Local State)
-* 09/26 - Section 3.2 (The Environment Model of Evaluation)
-* 10/03 - Section 3.3 (Modeling with Mutable Data)
-* 10/10 - Section 3.4 (Concurrency: Time is of the Essence)
-* 10/17 - Section 3.5 (Streams)
+* 09/26 - Section 3.1 (Assignment and Local State)
+* 10/03 - Section 3.2 (The Environment Model of Evaluation)
+* 10/10 - Section 3.3 (Modeling with Mutable Data)
+* 10/17 - Section 3.4 (Concurrency: Time is of the Essence)
+* 10/24 - Section 3.5 (Streams)
 
 > Chapter 4
 
-* 10/24 - Section 4.1 (The Metacircular Evaluator)
 * 10/31 - Week off for Halloween
-* 11/07 - Section 4.2 + 4.3 (Lazy Evaluation & Non-deterministic Computing)
-* 11/14 - Section 4.4 (Logic Programming)
+* 11/07 - Section 4.1 (The Metacircular Evaluator)
+* 11/14 - Section 4.2 + 4.3 (Lazy Evaluation & Non-deterministic Computing)
 * 11/22 - Week off for Thanksgiving
+* 11/28 - Section 4.4 (Logic Programming)
 
 > Chapter 5
 
-* 11/28 - Section 5.1 (Designing Register Machines)
-* 12/05 - Section 5.2 (A Register-Machine Simulator)
-* 12/12 - Section 5.3 + 5.4 (Garbage Collection + Explicit Control)
-* 12/19 - Section 5.5 (Compilation)
+* 12/05 - Section 5.1 (Designing Register Machines)
+* 12/12 - Section 5.2 (A Register-Machine Simulator)
+* 12/19 - Section 5.3 + 5.4 (Garbage Collection + Explicit Control)
+* TBD - Section 5.5 (Compilation)
 
 ### Resources
 
