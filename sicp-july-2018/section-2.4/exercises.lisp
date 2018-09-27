@@ -118,9 +118,40 @@
 
 ;; Exercise 2.73
 
+(defun derive (exp var)
+  (flet ((operator (exp) (car exp))
+         (operands (exp) (cdr exp)))
+    (cond ((numberp exp) 0)
+          ((and (symbolp exp)
+                (symbolp var))
+           (if (eq exp var) 1 0))
+          (t
+           (funcall (get 'derive (operator exp))
+                    (operands exp) var)))))
+
+;; 1. This is a fairly straightforward refactoring to store functions in the "derive" symbol
+;; plist for handling the various kinds of expressions we'd want to derive. This won't work
+;; for numbers and vars since they're atoms and the data directed dispatch is currently based
+;; on lists.
+
+;; 2.
+
+(flet (()))
+
 ;; Exercise 2.74
 
 ;; Exercise 2.75
 
 ;; Exercise 2.76
 
+;; This is the expression problem! https://en.wikipedia.org/wiki/Expression_problem
+;; Ignoring issues of multiple dispatch...
+;; When adding a new type:
+;;   * Explicit dispatch -> every generic operation handling that type must be modified
+;;     * this is basically CL typecase
+;;   * Data-directed style -> a package for the type must be installed/table updated
+;;   * Message-passing style -> only "receiving" operations must be modified
+;; When adding a new operation:
+;;   * Explicit dispatch -> Only the new operation needs to be written
+;;   * Data-directed style -> separate implementations for all supported types, installer
+;;   * Message-passing style -> Add a dispatch clause to all supported types
