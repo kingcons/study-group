@@ -87,5 +87,12 @@
           (t
            (filter fn (tail list))))))
 
+;;; Example Usage
+
 (defun fibgen (a b)
   (make-lazy-list a (fibgen b (+ a b))))
+
+(defvar *fibs* (fibgen 0 1))
+
+(defun fib (n) (ref *fibs* n))
+(defun show-fib (n) (format t "The ~dth fibonacci number is ~d~%" n (fib n)))
