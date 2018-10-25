@@ -25,7 +25,17 @@
 (defmacro make-lazy-list (head tail)
   `(make-instance 'lazy-list :head ,head :tail (delay ,tail)))
 
-;;;; Memoized Lazy List Variant
+;;; Example Usage
+
+(defun fibgen (a b)
+  (make-lazy-list a (fibgen b (+ a b))))
+
+(defvar *fibs* (fibgen 0 1))
+
+(defun fib (n) (ref *fibs* n))
+(defun show-fib (n) (format t "The ~dth fibonacci number is ~d~%" n (fib n)))
+
+;;; Memoized Lazy List Variant
 
 (defun memoize (fn)
   (let ((executed-p nil)
@@ -43,7 +53,7 @@
 (defmacro make-lazy-memo (head tail)
   `(make-instance 'lazy-list :head ,head :tail (delay-memo ,tail)))
 
-;; Lazy List operations
+;;; Lazy List operations
 
 (defgeneric lmap (fn list)
   (:documentation "Map over the Lazy LIST with FN.")
@@ -86,13 +96,3 @@
                            (filter fn (tail list))))
           (t
            (filter fn (tail list))))))
-
-;;; Example Usage
-
-(defun fibgen (a b)
-  (make-lazy-list a (fibgen b (+ a b))))
-
-(defvar *fibs* (fibgen 0 1))
-
-(defun fib (n) (ref *fibs* n))
-(defun show-fib (n) (format t "The ~dth fibonacci number is ~d~%" n (fib n)))
