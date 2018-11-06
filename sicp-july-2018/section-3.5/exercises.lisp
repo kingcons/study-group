@@ -25,6 +25,13 @@
 (defmacro make-lazy-list (head tail)
   `(make-instance 'lazy-list :head ,head :tail (delay ,tail)))
 
+(defgeneric lref (list i)
+  (:documentation "Access the Ith element of the LIST.")
+  (:method ((list lazy-list) i)
+    (if (zerop i)
+        (head list)
+        (lref (tail list) (1- i)))))
+
 ;;; Example Usage
 
 (defun fibgen (a b)
@@ -32,7 +39,7 @@
 
 (defvar *fibs* (fibgen 0 1))
 
-(defun fib (n) (ref *fibs* n))
+(defun fib (n) (lref *fibs* n))
 (defun show-fib (n) (format t "The ~dth fibonacci number is ~d~%" n (fib n)))
 
 ;;; Memoized Lazy List Variant
@@ -70,13 +77,6 @@
       nil
       (make-lazy-list low (liota (1+ low) high))))
 
-(defgeneric ref (list i)
-  (:documentation "Access the Ith element of the LIST.")
-  (:method ((list lazy-list) i)
-    (if (zerop i)
-        (head list)
-        (ref (tail list) (1- i)))))
-
 (defgeneric each (fn list)
   (:documentation "Iterate over LIST executing FN.")
   (:method (fn (list lazy-list))
@@ -96,3 +96,44 @@
                            (filter fn (tail list))))
           (t
            (filter fn (tail list))))))
+
+(defgeneric display (list)
+  (:documentation "Display the entire stream.")
+  (:method (list)
+    (each (lambda (x) (format t "~%~A" x)) list)))
+
+;;; Exercises
+
+;; Exercise 3.50
+
+(defun stream-map (fn &rest streams)
+  (if (null (car streams))
+      nil
+      (make-lazy-memo
+       (apply fn (mapcar 'head streams))
+       (apply 'stream-map (cons fn (mapcar 'tail streams))))))
+
+;; Exercise 3.51
+
+(defvar *nums* (liota 1 10))
+
+(defun show (x)
+  (format t "~A~%" x)
+  x)
+
+;; Only 0 is printed when the stream-map is constructed.
+;; 1-5 are printed on referencing 5 and 1-7 are printed on referencing 7.
+;; NOTE: I did not use the lazy-memo version for this.
+;; Presumably if I had only 6 and 7 would've printed for (lref 7).
+;; Footnote 187 that goes with this exercise is quite thought provoking.
+
+;; Exercise 3.52
+
+(defvar *sum* 0)
+
+(defun accum! (x)
+  (incf *sum* x))
+
+(defvar *seq* (stream-map #'accum! (liota 1 20)))
+(defvar *evens* (filter #'evenp *seq*))
+(defvar *mod-5* (filter (lambda (x) (zerop (rem x 5))) *seq*))
