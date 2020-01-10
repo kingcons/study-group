@@ -27,6 +27,15 @@ on the fly as the group deems necessary. The schedule is not set in stone.
 
 You are encouraged to attempt the exercises prior to a group meeting! :)
 
+### Organization
+
+A group leader will be in charge of each session. Volunteering is encouraged.
+
+Prior to the meeting, a github issue should be created where a group leader is selected.
+Any notes on exercises that should possibly be avoided or potential rabbit holes in
+the material should be posted in the issue as well as questions from participants.
+At the end of the session, the issue can be closed and a followup issue opened for the next meeting.
+
 #### Tentative Timeline
 
 > Part 1 - Welcome
