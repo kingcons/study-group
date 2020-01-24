@@ -14,54 +14,66 @@ We resolve to acknowledge the rich history of computer science and invigorate ou
 
 Mostly, we want to have fun and hack the good hack. Come join us!
 
-### Schedule
-
-We will be meeting at the Calendly offices every other Wednesday from 5:30 - 7:00pm.
-
-Readings are expected to be completed prior to the meeting so that limited
-in-person time can be spent on discussion and exercises.
-
-In the interest of completing the book in a reasonable time frame (6 months),
-we'll target 2 chapters per meeting. We can adjust the pace
-on the fly as the group deems necessary. The schedule is not set in stone.
-
-You are encouraged to attempt the exercises prior to a group meeting! :)
-
 ### Organization
 
 A group leader will be in charge of each session. Volunteering is encouraged.
 
-Prior to the meeting, a github issue should be created where a group leader is selected.
+Prior to the meeting, a github issue should be created and a group leader selected.
 Any notes on exercises that should possibly be avoided or potential rabbit holes in
 the material should be posted in the issue as well as questions from participants.
+
+During the meeting, important points from discussion can be added in the issue along
+with links to PRs for anyone who would like to point out the work on their implementation.
+
 At the end of the session, the issue can be closed and a followup issue opened for the next meeting.
+
+### Implementations
+
+* Brit - [relox](https://github.com/kingcons/relox)
+* ...
+
+### Schedule
+
+We will be discussing the reading and our implementations at Calendly's office over lunch.
+
+Meetings will be every other Thursday at Noon, starting February the 6th.
+Readings are expected to be completed prior to the meeting so that limited in-person
+time can be spent on discussion and code review. While building an interpreter
+is not _required_ to participate, it is encouraged to support active learning.
+
+In the interest of completing the book in a reasonable time frame (6 months),
+we'll target ~2 chapters per meeting. We can adjust the pace
+on the fly as the group deems necessary. The schedule is not set in stone.
+
+The slack channel, `#study-group`, should be used for async discussion and
+debugging assistance.
 
 #### Tentative Timeline
 
 > Part 1 - Welcome
 
-* 01/22 - Introduction & A Map of the Territory & The Lox Language (37 pages)
+* 02/06 - Introduction & A Map of the Territory & The Lox Language (37 pages)
 
 > Part 2 - A Tree-Walk Interpreter
 
-* 02/05 - Scanning & Representing Code (40 pages)
-* 02/19 - Parsing Expressions & Evaluating Expressions (33 pages)
-* 03/04 - Statements and State & Control Flow (42 pages)
-* 03/18 - Functions & Resolving and Binding (46 pages)
-* 04/01 - Classes & Inheritance (46 pages)
+* 02/20 - Scanning & Representing Code (40 pages)
+* 03/05 - Parsing Expressions & Evaluating Expressions (33 pages)
+* 03/19 - Statements and State & Control Flow (42 pages)
+* 04/02 - Functions & Resolving and Binding (46 pages)
+* 04/16 - Classes & Inheritance (46 pages)
 
 > Part 3 - A Bytecode Virtual Machine
 
-* 04/15 - Chunks of Bytecode & A Virtual Machine (47 pages)
-* 04/29 - Scanning on Demand & Compiling Expressions (45 pages)
-* 05/13 - Types of Values & Strings (35 pages)
-* 05/27 - Hash Tables (25 pages)
-* 06/10 - Global Variables & Local Variables (35 pages)
-* 06/24 - Jumping Back and Forth & Calls and Functions (57 pages)
-* 07/08 - Closures (38 pages)
-* 07/22 - Garbage Collection (29 pages)
-* 08/05 - Classes and Instances & Methods and Initializers (not yet released)
-* 08/19 - Superclasses & Optimization (not yet released)
+* 04/30 - Chunks of Bytecode & A Virtual Machine (47 pages)
+* 05/14 - Scanning on Demand & Compiling Expressions (45 pages)
+* 05/28 - Types of Values & Strings (35 pages)
+* 06/11 - Hash Tables (25 pages)
+* 06/25 - Global Variables & Local Variables (35 pages)
+* 07/09 - Jumping Back and Forth & Calls and Functions (57 pages)
+* 07/23 - Closures (38 pages)
+* 08/06 - Garbage Collection (29 pages)
+* 08/20 - Classes and Instances & Methods and Initializers (not yet released)
+* 09/03 - Superclasses & Optimization (not yet released)
 
 ### Resources
 
@@ -83,6 +95,6 @@ If you'd like to contribute written notes or other material for any chapters,
 don't hesitate to ask to be added as a collaborator on the study-group
 repo!
 
-#### Youtube Lectures, Papers, etc
+#### Youtube Lectures, Papers, Blog posts, etc
 
 * To be added as they're discovered...
