@@ -1,8 +1,7 @@
 ## The Glossary
 
-### Curry-Howard Isomorphism
-A 20th century mathematical discovery of the close relationship between formal logics
-(proof systems) and computational calculi, such as the typed lambda calculus. In short,
-this shows that every program corresponds to some mathematical proof and any proof can
-be modeled by a program.
+Compiling: Translates source code from one language to another language without executing it.
 
+Curry-Howard Isomorphism: The relationship between formal logics (proof systems) and programs.
+
+Interpreter: Takes in source code and runs it immediately.
