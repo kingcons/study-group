@@ -26,11 +26,11 @@ During the meeting, important points from discussion can be added in the issue a
 with links to PRs for anyone who would like to point out the work on their implementation.
 
 At the end of the session, the issue can be closed and a followup issue opened for the next meeting.
-
+`
 ### Implementations
 
-* Brit - [relox](https://github.com/kingcons/relox)
-* ...
+* Brit - [collox](https://github.com/kingcons/collox)
+* Casey - [study-group-lox](https://github.com/cadement/study_group-lox)
 
 ### Schedule
 
